@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Paiement</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{|/|}">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Paiement</li>
+            </ol>
+        </nav>
+
+        <h1 class="text-center">Application MCommerce : Paiement</h1>
+
+        <div class="row">
+            <div class="col-md-4 mx-auto mt-5 text-center">
+                <p>
+                    Ici l'utilisateur sélectionne en temps normal un moyen de paiement et entre les informations de sa carte bancaire.<br/>
+                    Nous allons éviter d'ajouter les formulaires nécessaireS afin de garder l'application la plus basique et simple possible pour la suite.<br/>
+                    Si vous vous sentez à l'aise, vous pouvez créer un formulaire pour accepter le numéro de la CB, que vous traiterez dans le contrôleur grâce à
+                    un <i>PostMapping</i>.
+                </p>
+
+                <!-- On passe l'id de la commande ET le montant de celle-ci afin que le contrôleur ait les informations nécessaires pour faire appel au microservice de paiement -->
+                <p>
+                    <a th:href="@{|/payer-commande/${commande.id}/${montant}|}" class="font-weight-bold">Payer Ma Commande</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation de commande</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a th:href="@{|/|}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Confirmation de commande</li>
+        </ol>
+    </nav>
+
+    <h1 class="text-center">Application MCommerce : Confirmation de commande <span th:text="${idCommande}"></span></h1>
+
+    <div class="row">
+        <div class="col-md-4 mx-auto mt-5 text-center">
+            <p th:if="${paiementOk}">Paiement Accepté</p>
+            <p th:unless="${paiementOk}">Le paiement n'a pas abouti</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
