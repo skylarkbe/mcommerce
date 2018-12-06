@@ -15,14 +15,14 @@ public class Paiement {
     @Column(unique = true)
     private Integer idCommande;
 
-    private Integer montant;
+    private Double montant;
 
     private Long numeroCarte;
 
     public Paiement() {
     }
 
-    public Paiement(int id, Integer idCommande, Integer montant, Long numeroCarte) {
+    public Paiement(int id, Integer idCommande, Double montant, Long numeroCarte) {
         this.id = id;
         this.idCommande = idCommande;
         this.montant = montant;
@@ -45,11 +45,11 @@ public class Paiement {
         this.idCommande = idCommande;
     }
 
-    public Integer getMontant() {
+    public Double getMontant() {
         return montant;
     }
 
-    public void setMontant(Integer montant) {
+    public void setMontant(Double montant) {
         this.montant = montant;
     }
 
